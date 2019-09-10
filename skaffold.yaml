@@ -1,0 +1,19 @@
+apiVersion: skaffold/v1beta13
+kind: Config
+build:
+  artifacts:
+    - image: jwenz723/skaffolddemo-backend
+      context: ./backend/
+    - image: jwenz723/skaffolddemo-frontend
+      context: ./frontend/
+  local: {}
+deploy:
+  kubectl:
+    manifests:
+      - ./backend/kubernetes/*
+      - ./frontend/kubernetes/*
+portForward:
+  - resourceType: deployment
+    resourceName: skaffolddemo-frontend
+    port: 8080
+    localPort: 9000
