@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: flux-frontend
-          image: jwenz723/demohttp-frontend
+          image: jwenz723/demohttp-frontend:latest
           args:
             - "-addr=:8080"
             - "-backend-addr=http://flux-backend:8080"
