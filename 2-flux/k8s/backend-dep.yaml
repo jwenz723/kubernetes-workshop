@@ -1,34 +1,34 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: skaffolddemo-backend
+  name: flux-backend
   labels:
-    app: skaffolddemo-backend
+    app: flux-backend
 spec:
   ports:
     - port: 8080
-      name: skaffolddemo-backend
+      name: flux-backend
   selector:
-    app: skaffolddemo-backend
+    app: flux-backend
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skaffolddemo-backend
+  name: flux-backend
   labels:
-    app: skaffolddemo-backend
+    app: flux-backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: skaffolddemo-backend
+      app: flux-backend
   template:
     metadata:
       labels:
-        app: skaffolddemo-backend
+        app: flux-backend
     spec:
       containers:
-        - name: skaffolddemo-backend
+        - name: flux-backend
           image: jwenz723/demohttp-backend
           args:
             - "-addr=:8080"

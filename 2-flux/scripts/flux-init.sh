@@ -14,7 +14,7 @@ fi
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 REPO_URL=${1:-git@github.com:jwenz723/kubernetes-workshop}
-GIT_PATH=${2:-flux/}
+GIT_PATH=${2:-2-flux/}
 REPO_BRANCH=master
 TEMP=${REPO_ROOT}/temp
 
