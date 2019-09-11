@@ -11,7 +11,7 @@ import (
 func main() {
 	svcname := "backend"
 
-	addr := flag.String("addr", ":8081", "address to run server on")
+	addr := flag.String("addr", ":8081", "address to run the backend server on")
 	flag.Parse()
 
 	helloHandler := func(w http.ResponseWriter, req *http.Request) {

@@ -2,11 +2,12 @@ apiVersion: skaffold/v1beta13
 kind: Config
 build:
   artifacts:
-    - image: jwenz723/skaffolddemo-backend
+    - image: jwenz723/demohttp-backend
       context: ./backend/
-    - image: jwenz723/skaffolddemo-frontend
+    - image: jwenz723/demohttp-frontend
       context: ./frontend/
-  local: {}
+  local:
+    push: true
 deploy:
   kubectl:
     manifests:
