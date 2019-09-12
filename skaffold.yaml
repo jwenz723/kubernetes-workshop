@@ -7,7 +7,9 @@ build:
     - image: jwenz723/demohttp-frontend
       context: ./cmd/frontend/
   local:
-    push: true
+  # You can enable this if you want skaffold to push built images into your docker registry. You will need to modify the image
+  # path specified above to change `jwenz723` to your docker hub username.
+#    push: true
 deploy:
   kubectl:
     manifests:
