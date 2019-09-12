@@ -8,16 +8,22 @@ import (
 	"net/http"
 )
 
-func main() {
-	svcname := "frontend"
+const HELLO_RESPONSE = "Underworld says: %s\n"
 
+func main() {
 	addr := flag.String("addr", ":8080", "address to run the frontend server on")
 	backendAddr := flag.String("backend-addr", "http://localhost:8081", "address of the running backend server")
 	flag.Parse()
 
-	helloHandler := func(w http.ResponseWriter, req *http.Request) {
-		fmt.Printf("handled %s request\n", svcname)
-		resp, err := http.Get(fmt.Sprintf("%s/hello", *backendAddr))
+	http.Handle("/hello", handleHello(*backendAddr))
+	fmt.Printf("starting frontend http on %s\n", *addr)
+	log.Fatal(http.ListenAndServe(*addr, nil))
+}
+
+func handleHello(backendAddr string) http.HandlerFunc {
+	return func(w http.ResponseWriter, req *http.Request) {
+		fmt.Printf("handled request\n")
+		resp, err := getBackendData(backendAddr)
 		if err != nil {
 			http.Error(w, fmt.Errorf("failed to reach backend: %w", err).Error(), http.StatusInternalServerError)
 			return
@@ -28,10 +34,10 @@ func main() {
 			http.Error(w, fmt.Errorf("failed to parse backend response: %w", err).Error(), http.StatusInternalServerError)
 			return
 		}
-		fmt.Fprintf(w, "Underworld says: %s\n", string(b))
+		fmt.Fprintf(w, HELLO_RESPONSE, string(b))
 	}
+}
 
-	http.HandleFunc("/hello", helloHandler)
-	fmt.Printf("starting %s http on %s\n", svcname, *addr)
-	log.Fatal(http.ListenAndServe(*addr, nil))
+func getBackendData(backendAddr string) (*http.Response, error) {
+	return http.Get(fmt.Sprintf("%s/hello", backendAddr))
 }
