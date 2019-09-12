@@ -17,3 +17,7 @@ portForward:
     resourceName: skaffolddemo-frontend
     port: 8080
     localPort: 9000
+  - resourceType: deployment
+    resourceName: skaffolddemo-backend
+    port: 8080
+    localPort: 9001
