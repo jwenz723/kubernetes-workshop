@@ -20,7 +20,7 @@ var metricRequestsTotal = prometheus.NewCounterVec(
 	[]string{"method", "endpoint"},
 )
 
-const HELLO_RESPONSE = "Hello, from the underworld!\n"
+const HELLO_RESPONSE = "Hello, from Bolivia!\n"
 
 func init() {
 	// Metrics have to be registered to be exposed:
@@ -48,7 +48,7 @@ func handleHello(requestsCounter prometheus.Counter) http.HandlerFunc {
 }
 
 func handleContributors(requestsCounter prometheus.Counter) http.HandlerFunc {
-	contributors := []string{"Jeff Wenzbauer", "Dan Palmer", "Greg Fishilevich"}
+	contributors := []string{"Jeff Wenzbauer", "Dan Palmer", "Greg Fishilevich", "Rolando Valdivia"}
 	return func(w http.ResponseWriter, req *http.Request) {
 		requestsCounter.Inc()
 		fmt.Printf("handled contributors request\n")
