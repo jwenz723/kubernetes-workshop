@@ -16,3 +16,4 @@ A set of modules used to learn about how to use kubernetes.
 * Install minikube
 * Install kubectl
 * Install helm
+* (Optional) install fluxctl
