@@ -3,16 +3,15 @@ kind: Config
 build:
   artifacts:
     - image: jwenz723/demohttp-backend
-      context: ./backend/
+      context: ./cmd/backend/
     - image: jwenz723/demohttp-frontend
-      context: ./frontend/
+      context: ./cmd/frontend/
   local:
     push: true
 deploy:
   kubectl:
     manifests:
-      - ./backend/kubernetes/*
-      - ./frontend/kubernetes/*
+      - ./k8s/*
 portForward:
   - resourceType: deployment
     resourceName: skaffolddemo-frontend

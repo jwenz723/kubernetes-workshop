@@ -11,13 +11,12 @@ node {
 
         checkout scm
 
-        def appBackend = new GoApp("demohttp-backend", "backend")
-        def appFrontend = new GoApp("demohttp-frontend", "frontend")
+        def appBackend = new GoApp("demohttp-backend", "cmd/backend")
+        def appFrontend = new GoApp("demohttp-frontend", "cmd/frontend")
         def apps = [appBackend, appFrontend]
 
         def params = new GoStandardPipelineParams()
         params.apps = apps
-        params.directory = "${WORKSPACE}/1-skaffold"
         params.jenkinsCredential_GitAccess = "ESCWORKSTREAM_GITHUB_PERSONAL_ACCESS_TOKEN"
         params.organization = "kubernetes-workshop"
 
