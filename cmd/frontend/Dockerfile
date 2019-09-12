@@ -1,4 +1,5 @@
 FROM golang:1.13-alpine3.10 as builder
+ENV GO111MODULE=on
 COPY main.go .
 RUN go build -o /app main.go
 
