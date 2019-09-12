@@ -48,7 +48,7 @@ func handleHello(requestsCounter prometheus.Counter) http.HandlerFunc {
 }
 
 func handleContributors(requestsCounter prometheus.Counter) http.HandlerFunc {
-	contributors := []string{"Jeff Wenzbauer", "Dan Palmer"}
+	contributors := []string{"Jeff Wenzbauer", "Dan Palmer", "Greg Fishilevich"}
 	return func(w http.ResponseWriter, req *http.Request) {
 		requestsCounter.Inc()
 		fmt.Printf("handled contributors request\n")
