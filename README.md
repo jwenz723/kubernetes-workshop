@@ -58,6 +58,12 @@ Underworld says: Hello, from the underworld!
 you're not sure what code to change, you can start by modifying the value of `HELLO_RESPONSE` in [cmd/frontend/main.go](/cmd/frontend/main.go)) 
 1. Skaffold will automatically recompile the app and then deploy the changes into your minikube instance. 
 
+#### Testing local deployment changes
+
+1. Follow the instructions here to get your minikube instance setup to mirror what is deployed into our 'production' kubernetes
+cluster: https://github.com/jwenz723/kubernetes-workshop-flux
+1. After you have finished those steps, make sure to come back to this repo and try out the steps below.
+
 #### Making a 'production' change
 
 1. Now that you have played with development of these apps, it is time for you to commit back to the project.
