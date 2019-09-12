@@ -52,6 +52,8 @@ prints the message that was received from the backend (`Hello, from the underwor
 Underworld says: Hello, from the underworld!
 ```
 
+1. When you are done playing with skaffold simply enter `ctrl+c` to stop skaffold and cleanup what was installed into the cluster.
+
 #### Testing local development changes
 
 1. While the apps are running, modify the source code of either the backend or frontend app then save your changes. (If 
