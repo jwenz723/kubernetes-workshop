@@ -11,12 +11,19 @@ An example app written in go to show some of the features of kubernetes.
     `docker login` then entering your credentials
 1. Follow OS specific instructions for your machine:
 
+> The steps below document how to setup your local cluster using minikube. An alternative (and good) route is to enable
+> kubernetes support within 'Docker For Desktop' by opening the settings and checking the box to install kubernetes.
+
 #### Windows
 1. Install chocolatey: https://chocolatey.org/docs/installation#installing-chocolatey
 1. Install git: https://git-scm.com/download/win
 1. Install kubectl: `choco install kubernetes-cli`
 1. Install minikube: `choco install minikube`
 1. Start minikube: `minikube start`
+    
+    > If you have hyperv enabled, you will need to start minikube using hyperv rather than the default of virtualbox. You
+    > can follow these instructions to get going with hyperv: https://minikube.sigs.k8s.io/docs/reference/drivers/hyperv/
+
 1. Install helm: `choco install kubernetes-helm`
 1. Install skaffold: `choco install skaffold`
 
