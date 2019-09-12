@@ -38,6 +38,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
+// handleHello handles /hello requests
 func handleHello(requestsCounter prometheus.Counter) http.HandlerFunc {
 	return func(w http.ResponseWriter, req *http.Request) {
 		requestsCounter.Inc()
