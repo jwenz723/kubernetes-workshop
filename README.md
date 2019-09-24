@@ -6,14 +6,14 @@ An example app written in go to show some of the features of kubernetes.
 
 1. [Create a github account](https://github.com/join?source=header-home) (if you don't already have one)
 1. [Install docker](https://hub.docker.com/?overlay=onboarding)
-    * Create a docker hub account (if you don't already have one): https://hub.docker.com/signup?next=%2F%3Fref%3Dlogin
+    * [Create a docker hub account](https://hub.docker.com/signup?next=%2F%3Fref%3Dlogin) (if you don't already have one)
     * Authenticate your local docker installation to your docker hub account by opening a terminal/prompt and executing 
     `docker login` then entering your credentials
 1. Install a package manager
     * Windows: [Install chocolatey](https://chocolatey.org/docs/installation#installing-chocolatey)
     * Mac: Install homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 1. Install git
-    * Windows: https://git-scm.com/download/win
+    * [Windows](https://git-scm.com/download/win)
     * Mac: `brew install git`
 
 ## Installing Kubernetes
