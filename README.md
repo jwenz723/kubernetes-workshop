@@ -9,34 +9,47 @@ An example app written in go to show some of the features of kubernetes.
     * Create a docker hub account (if you don't already have one): https://hub.docker.com/signup?next=%2F%3Fref%3Dlogin
     * Authenticate your local docker installation to your docker hub account by opening a terminal/prompt and executing 
     `docker login` then entering your credentials
-1. Follow OS specific instructions for your machine:
+1. Install a package manager
+    * Windows: Install chocolatey: https://chocolatey.org/docs/installation#installing-chocolatey
+    * Mac: Install homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+1. Install git
+    * Windows: https://git-scm.com/download/win
+    * Mac: `brew install git`
 
-> The steps below document how to setup your local cluster using minikube. An alternative (and good) route is to enable
-> kubernetes support within 'Docker For Desktop' by opening the settings and checking the box to install kubernetes.
+## Installing Kubernetes
 
-#### Windows
-1. Install chocolatey: https://chocolatey.org/docs/installation#installing-chocolatey
-1. Install git: https://git-scm.com/download/win
-1. Install kubectl: `choco install kubernetes-cli`
-1. Install minikube: `choco install minikube`
+You can choose to install a local kubernetes cluster using either Minikube or Docker For Desktop. Both are good solutions.
+
+#### Minikube
+
+1. Install minikube: 
+    * Windows: `choco install minikube`
+        > Windows: If you have hyperv enabled, you will need to start minikube using hyperv rather than the default of virtualbox. You can follow these instructions to get going with hyperv: https://minikube.sigs.k8s.io/docs/reference/drivers/hyperv/
+    * Mac: `brew cask install minikube`
 1. Start minikube: `minikube start`
-    
-    > If you have hyperv enabled, you will need to start minikube using hyperv rather than the default of virtualbox. You
-    > can follow these instructions to get going with hyperv: https://minikube.sigs.k8s.io/docs/reference/drivers/hyperv/
 
-1. Install helm: `choco install kubernetes-helm`
-1. Install skaffold: `choco install skaffold`
+#### Docker For Desktop
 
-#### Mac
+1. Install Docker For Desktop
+    * Windows: https://docs.docker.com/docker-for-windows/install/
+    * Mac: https://docs.docker.com/docker-for-mac/install/
+1. Enable kubernetes within settings:
+    * Windows: https://docs.docker.com/docker-for-windows/#kubernetes
+    * Mac: https://docs.docker.com/docker-for-mac/#kubernetes
 
-1. Install homebrew: `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-1. Install git: `brew install git`
-1. Install kubectl: `brew install kubernetes-cli`
-1. Install minikube: `brew cask install minikube`
-1. Start minikube: `minikube start`
-1. Install helm: `brew install kubernetes-helm`
-1. Install skaffold: `brew install skaffold`
+## Additional Tools
 
+Install the following tools to make use of the power of Kubernetes:
+
+1. Install kubectl
+    * Windows: `choco install kubernetes-cli`
+    * Mac: `brew install kubernetes-cli`
+1. Install helm
+    * Windows: `choco install kubernetes-helm`
+    * Mac: `brew install kubernetes-helm`
+1. Install skaffold
+    * Windows: `choco install skaffold`
+    * Mac: `brew install skaffold`
 
 ## Using skaffold
 
